@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="aeStyle.css"> </head>
 <script src="https://kit.fontawesome.com/4b0ebb4330.js" crossorigin="anonymous"></script>
 
-<body>
+<body id="body">
     <section class="hero is-info is-fullheight" id="body">
             <div class="hero-body">
                 <div class="container has-text-centered">
-                    <div class="column is-6 is-offset-3">
+                    <div class="column is-6 is-offset-3" id="infoArea">
                         <h1 class="title" id="name">
                             Ali Eskandary
                         </h1>
@@ -37,12 +37,28 @@
                             </span>
                             <span>Email</span>
                         </a>
-                
                     </div>
+                    <a href="/index.html#posts"><i class="fas fa-chevron-down" id="downArrow"></i></a>
                 </div>
             </div>
-
+            
     </section>
+    
+<div id="posts">
+    <div class="tile is-ancestor">
+            <article class="tile is-child notification is-primary" id="post">
+              <p class="title">Meow Tab</p>
+              <p class="subtitle">Project - The purrfect chrome extension.</p>
+              <a class="button is-white is-outlined" href="https://github.com/aeskandary/meow-tab" id="postButton">
+                  <span class="icon">
+                      <i class="fa fa-github"></i>
+                  </span>
+                  <span>Read more on GitHub...</span>
+              </a>
+            </article>
+      </div>
+</div>
+    
 </body>
 <script src="aeScript.js"></script>
 </html>

@@ -1,10 +1,11 @@
 #body{
     background-image: url("blueUnsplash-min.jpg");
     background-size: cover;
+    background-attachment: fixed;
     background-color: #0A131A;
 }
 #name{
-    font-size: 5em;
+    font-size: 4em;
 }
 #linkButton{
     background-color: rgba(256, 256, 256, 0.1);
@@ -13,6 +14,7 @@
 }
 #linkButton:hover{
     color: cyan;
+    border-color: darkcyan;
 }
 #lineBreak{
     margin-top:-2%;
@@ -20,4 +22,26 @@
 }
 #lineBreak:hover{
     background-color: white;
+}
+#infoArea{
+
+}
+#downArrow{
+    font-size:2em;
+}
+#downArrow:hover{
+    color: darkcyan;
+}
+#post{
+    background-color: darkcyan;
+    background-image: url("blueUnsplash-min.jpg");
+    background-attachment: fixed;
+    border: 7px darkcyan solid;
+}
+#posts{
+    padding-bottom:5%;
+}
+#postButton{
+    font-size:.9em;
+    border-radius:10%;
 }
