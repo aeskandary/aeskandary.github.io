@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  //add click events to close
+  //add click event to close
   (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
     const $target = $close.closest('.modal');
 
