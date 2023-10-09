@@ -1,6 +1,7 @@
 .pageBody{
     background-size: cover;
     background-attachment: fixed;
+    background-clip: padding-box;
     background-color: #0A131A;
 }
 .linkButton{
@@ -11,13 +12,13 @@
 .post{
     background-color: darkcyan;
     background-attachment: fixed;
-    border: 7px darkcyan solid;
+    background-clip: padding-box;
 }
 .photo{
     background-color: darkcyan;
-    background-image: url("../assets/graphics/blueUnsplash-min.jpg");
+    background-image: url("../assets/graphics/pinkUnsplash.png");
     background-attachment: fixed;
-    border: 7px darkcyan solid;
+    background-clip: padding-box;
 	align-content: center;
 	text-align: center;
 }
@@ -42,6 +43,7 @@
 .card-content{
 	background-image: url("../assets/graphics/whiteUnsplash.png");
     background-attachment: fixed;
+    background-clip: padding-box;
 	color: white;
 	text-shadow: 1px 1px black;
 }
@@ -55,18 +57,23 @@
     background-color: darkcyan;
     background-image: url("../assets/graphics/pinkUnsplash.png");
     background-attachment: fixed;
+    background-clip: padding-box;
 	background-position: bottom;
-    border: 7px darkcyan solid;
 }
 #photography{
     background-color: darkcyan;
     background-image: url("../assets/graphics/greenUnsplash.png");
     background-attachment: fixed;
+    background-clip: padding-box;
 	background-position: bottom;
-    border: 7px darkcyan solid;
 }
-#name{
+#name {
     font-size: 4em;
+}
+@media screen and (max-width: 768px) {
+    #name {
+        font-size: 3em;
+    }
 }
 #linkButton:hover{
     color: cyan;
@@ -94,9 +101,11 @@
   }
 #posts{
     padding-bottom:5%;
+    overflow-x: hidden;
 }
 #photos{
     padding-bottom:5%;
+    overflow-x: hidden;
 }
 @keyframes bounce {
     0%, 100% {
