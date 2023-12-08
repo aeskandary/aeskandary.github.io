@@ -24,7 +24,7 @@
         position: absolute;
         width: calc((100% - 24px) / 25 - 1px); /* Adjust to evenly distribute bars with space between them */
         height: 100%;
-        background-color: #ff5757;
+        background-color: var(--bar-color, #ff5757); /* Use a CSS variable for dynamic color */
         animation: bounce 1s infinite alternate;
         box-sizing: border-box; /* Include padding and border in the element's total width and height */
         }
@@ -208,6 +208,12 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const visualizerContainer = document.getElementById("visualizer-container");
+        const bars = Array.from(visualizerContainer.getElementsByClassName("bar"));
+
+        // Request permission for iOS 13+ devices
+        if (DeviceMotionEvent && typeof DeviceMotionEvent.requestPermission === "function") {
+            DeviceMotionEvent.requestPermission();
+        }
 
         function handleMotion(event) {
             const xAcceleration = event.acceleration.x;
@@ -217,13 +223,13 @@
             // Map zAcceleration to the color range (0 to 255)
             const redValue = Math.round(map(zAcceleration, -10, 10, 0, 255));
 
-            // Set the background color based on zAcceleration
-            visualizerContainer.style.backgroundColor = `rgb(${redValue}, 0, 0)`;
+            // Set the background color of .bar class based on zAcceleration
+            visualizerContainer.style.setProperty("--bar-color", `rgb(${redValue}, 0, 0)`);
 
-            // Move the container vertically based on yAcceleration
+            // Move the bars vertically based on yAcceleration
             visualizerContainer.style.transform = `translateY(${yAcceleration * 2}px)`;
 
-            // Move the container horizontally based on xAcceleration
+            // Move the bars horizontally based on xAcceleration
             visualizerContainer.style.transform += ` translateX(${xAcceleration * 2}px)`;
         }
 
@@ -234,6 +240,7 @@
         window.addEventListener("devicemotion", handleMotion);
     });
 </script>
+
 
 </main>
 </body>
