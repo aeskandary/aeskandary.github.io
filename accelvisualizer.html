@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Accelerometer Interaction</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #visualizer-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .bar {
+            position: absolute;
+            height: 100%;
+            background-color: #ff5757;
+            animation: bounce 1s infinite alternate;
+            box-sizing: border-box;
+        }
+
+        @keyframes bounce {
+            to {
+                transform: scaleY(1.5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="visualizer-container"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const visualizerContainer = document.getElementById("visualizer-container");
+            const numberOfBars = 25;
+            const bars = [];
+
+            for (let i = 0; i < numberOfBars; i++) {
+                const bar = document.createElement("div");
+                bar.className = "bar";
+                bar.style.width = `calc((100% - ${numberOfBars - 1}px) / ${numberOfBars})`;
+                bar.style.left = `calc((100% - ${numberOfBars - 1}px) / ${numberOfBars} * ${i})`;
+                visualizerContainer.appendChild(bar);
+                bars.push(bar);
+            }
+
+            function handleMotion(event) {
+                const xAcceleration = event.acceleration.x;
+                const yAcceleration = event.acceleration.y;
+                const zAcceleration = event.acceleration.z;
+
+                // Map zAcceleration to the color range (0 to 255)
+                const redValue = Math.round(map(zAcceleration, -10, 10, 0, 255));
+
+                // Set the background color based on zAcceleration
+                visualizerContainer.style.backgroundColor = `rgb(${redValue}, 0, 0)`;
+
+                // Reset the transformation to avoid accumulation
+                visualizerContainer.style.transform = '';
+
+                // Move the container vertically based on yAcceleration
+                visualizerContainer.style.transform += ` translateY(${yAcceleration * 2}px)`;
+
+                // Move the container horizontally based on xAcceleration
+                visualizerContainer.style.transform += ` translateX(${xAcceleration * 2}px)`;
+            }
+
+            function map(value, inMin, inMax, outMin, outMax) {
+                return (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+            }
+
+            window.addEventListener("devicemotion", handleMotion);
+        });
+    </script>
+</body>
+</html>
