@@ -3,30 +3,30 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Accelerometer Interaction</title>
+    <title>Accelerometer with Visualizer</title>
     <style>
         body {
-            margin: 0;
-            overflow: hidden;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
             background-color: #222;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            color: white;
+            overflow: hidden;
         }
 
         #visualizer-container {
             position: relative;
             width: 100%;
-            height: 100%;
+            height: 200px;
         }
 
         .bar {
-            position: absolute;
-            height: 100%;
-            background-color: #ff5757;
-            animation: bounce 1s infinite alternate;
-            box-sizing: border-box;
+        position: absolute;
+        width: calc((100% - 24px) / 25 - 1px); /* Adjust to evenly distribute bars with space between them */
+        height: 100%;
+        background-color: #ff5757;
+        animation: bounce 1s infinite alternate;
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
         }
 
         @keyframes bounce {
@@ -34,53 +34,207 @@
                 transform: scaleY(1.5);
             }
         }
+
+        .bar:nth-child(2n) {
+            animation-delay: 0.1s;
+            left: calc(100% / 25);
+        }
+
+        .bar:nth-child(3n) {
+            animation-delay: 0.2s;
+            left: calc(100% / 25 * 2);
+        }
+
+        .bar:nth-child(4n) {
+            animation-delay: 0.3s;
+            left: calc(100% / 25 * 3);
+        }
+
+        .bar:nth-child(5n) {
+            animation-delay: 0.4s;
+            left: calc(100% / 25 * 4);
+        }
+
+        .bar:nth-child(6n) {
+            animation-delay: 0.5s;
+            left: calc(100% / 25 * 5);
+        }
+
+        .bar:nth-child(7n) {
+            animation-delay: 0.6s;
+            left: calc(100% / 25 * 6);
+        }
+
+        .bar:nth-child(8n) {
+            animation-delay: 0.7s;
+            left: calc(100% / 25 * 7);
+        }
+
+        .bar:nth-child(9n) {
+            animation-delay: 0.8s;
+            left: calc(100% / 25 * 8);
+        }
+
+        .bar:nth-child(10n) {
+            animation-delay: 0.9s;
+            left: calc(100% / 25 * 9);
+        }
+
+        .bar:nth-child(11n) {
+            animation-delay: 1s;
+            left: calc(100% / 25 * 10);
+        }
+
+        .bar:nth-child(12n) {
+            animation-delay: 1.1s;
+            left: calc(100% / 25 * 11);
+        }
+
+        .bar:nth-child(13n) {
+            animation-delay: 1.2s;
+            left: calc(100% / 25 * 12);
+        }
+
+        .bar:nth-child(14n) {
+            animation-delay: 1.3s;
+            left: calc(100% / 25 * 13);
+        }
+
+        .bar:nth-child(15n) {
+            animation-delay: 1.4s;
+            left: calc(100% / 25 * 14);
+        }
+
+        .bar:nth-child(16n) {
+            animation-delay: 1.5s;
+            left: calc(100% / 25 * 15);
+        }
+
+        .bar:nth-child(17n) {
+            animation-delay: 1.6s;
+            left: calc(100% / 25 * 16);
+        }
+
+        .bar:nth-child(18n) {
+            animation-delay: 1.7s;
+            left: calc(100% / 25 * 17);
+        }
+
+        .bar:nth-child(19n) {
+            animation-delay: 1.8s;
+            left: calc(100% / 25 * 18);
+        }
+
+        .bar:nth-child(20n) {
+            animation-delay: 1.9s;
+            left: calc(100% / 25 * 19);
+        }
+
+        .bar:nth-child(21n) {
+            animation-delay: 2s;
+            left: calc(100% / 25 * 20);
+        }
+
+        .bar:nth-child(22n) {
+            animation-delay: 2.1s;
+            left: calc(100% / 25 * 21);
+        }
+
+        .bar:nth-child(23n) {
+            animation-delay: 2.2s;
+            left: calc(100% / 25 * 22);
+        }
+
+        .bar:nth-child(24n) {
+            animation-delay: 2.3s;
+            left: calc(100% / 25 * 23);
+        }
+
+        .bar:nth-child(25n) {
+            animation-delay: 2.4s;
+            left: calc(100% / 25 * 24);
+        }
+
+        #accelerationData {
+            font-size: 20px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-    <div id="visualizer-container"></div>
+<main role="main">
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const visualizerContainer = document.getElementById("visualizer-container");
-            const numberOfBars = 25;
-            const bars = [];
+<h1>Accelerometer with Visualizer</h1>
+<p><b>This demo page features accelerometer data and a simple animated visualizer effect.</b></p>
 
-            for (let i = 0; i < numberOfBars; i++) {
-                const bar = document.createElement("div");
-                bar.className = "bar";
-                bar.style.width = `calc((100% - ${numberOfBars - 1}px) / ${numberOfBars})`;
-                bar.style.left = `calc((100% - ${numberOfBars - 1}px) / ${numberOfBars} * ${i})`;
-                visualizerContainer.appendChild(bar);
-                bars.push(bar);
-            }
+<div id="visualizer-container">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>    
+</div>
 
-            function handleMotion(event) {
-                const xAcceleration = event.acceleration.x;
-                const yAcceleration = event.acceleration.y;
-                const zAcceleration = event.acceleration.z;
+<div id="accelerationData">
+    <p>Num. of datapoints: <span id="num-observed-events">0</span></p>
 
-                // Map zAcceleration to the color range (0 to 255)
-                const redValue = Math.round(map(zAcceleration, -10, 10, 0, 255));
+    <h4>Accelerometer XYZ Data</h4>
+    <ul>
+        <li>X-axis: <span id="Accelerometer_x">0</span> m/s<sup>2</sup></li>
+        <li>Y-axis: <span id="Accelerometer_y">0</span> m/s<sup>2</sup></li>
+        <li>Z-axis: <span id="Accelerometer_z">0</span> m/s<sup>2</sup></li>
+    </ul>
+</div>
 
-                // Set the background color based on zAcceleration
-                visualizerContainer.style.backgroundColor = `rgb(${redValue}, 0, 0)`;
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const visualizerContainer = document.getElementById("visualizer-container");
 
-                // Reset the transformation to avoid accumulation
-                visualizerContainer.style.transform = '';
+        function handleMotion(event) {
+            const xAcceleration = event.acceleration.x;
+            const yAcceleration = event.acceleration.y;
+            const zAcceleration = event.acceleration.z;
 
-                // Move the container vertically based on yAcceleration
-                visualizerContainer.style.transform += ` translateY(${yAcceleration * 2}px)`;
+            // Map zAcceleration to the color range (0 to 255)
+            const redValue = Math.round(map(zAcceleration, -10, 10, 0, 255));
 
-                // Move the container horizontally based on xAcceleration
-                visualizerContainer.style.transform += ` translateX(${xAcceleration * 2}px)`;
-            }
+            // Set the background color based on zAcceleration
+            visualizerContainer.style.backgroundColor = `rgb(${redValue}, 0, 0)`;
 
-            function map(value, inMin, inMax, outMin, outMax) {
-                return (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
-            }
+            // Move the container vertically based on yAcceleration
+            visualizerContainer.style.transform = `translateY(${yAcceleration * 2}px)`;
 
-            window.addEventListener("devicemotion", handleMotion);
-        });
-    </script>
+            // Move the container horizontally based on xAcceleration
+            visualizerContainer.style.transform += ` translateX(${xAcceleration * 2}px)`;
+        }
+
+        function map(value, inMin, inMax, outMin, outMax) {
+            return (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+        }
+
+        window.addEventListener("devicemotion", handleMotion);
+    });
+</script>
+
+</main>
 </body>
 </html>
