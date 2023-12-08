@@ -20,6 +20,16 @@
             height: 200px;
         }
 
+        #startButton {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
         .bar {
         position: absolute;
         width: calc((100% - 24px) / 25 - 1px); /* Adjust to evenly distribute bars with space between them */
@@ -205,52 +215,52 @@
     </ul>
 </div>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const visualizerContainer = document.getElementById("visualizer-container");
+<button id="startButton">Start Demo</button>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const visualizerContainer = document.getElementById("visualizer-container");
+
+    function handleMotion(event) {
+        const xAcceleration = event.acceleration.x;
+        const yAcceleration = event.acceleration.y;
+        const zAcceleration = event.acceleration.z;
+
+        // Map zAcceleration to the color range (0 to 255)
+        const redValue = Math.round(map(zAcceleration, -10, 10, 0, 255));
+
+        // Set the background color of .bar class based on zAcceleration
+        visualizerContainer.style.setProperty("--bar-color", `rgb(${redValue}, 0, 0)`);
+
+        // Move the bars vertically based on yAcceleration
+        visualizerContainer.style.transform = `translateY(${yAcceleration * 2}px)`;
+
+        // Move the bars horizontally based on xAcceleration
+        visualizerContainer.style.transform += ` translateX(${xAcceleration * 2}px)`;
+    }
+
+    function map(value, inMin, inMax, outMin, outMax) {
+        return (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+    }
+
+    // Add an event listener to a user gesture, e.g., a button click
+    document.getElementById("startButton").addEventListener("click", function () {
         // Request permission for iOS 13+ devices
         if (typeof DeviceMotionEvent.requestPermission === "function") {
             DeviceMotionEvent.requestPermission().then(response => {
                 if (response === "granted") {
-                    startMotionListener();
+                    // Start the motion listener after permission is granted
+                    window.addEventListener("devicemotion", handleMotion);
                 } else {
                     console.log("Permission denied");
                 }
             }).catch(console.error);
         } else {
-            startMotionListener();
-        }
-
-        function startMotionListener() {
-            console.log("Motion listener started");
-            
-            function handleMotion(event) {
-                console.log("Motion event received:", event);
-                const xAcceleration = event.acceleration.x;
-                const yAcceleration = event.acceleration.y;
-                const zAcceleration = event.acceleration.z;
-
-                // Map zAcceleration to the color range (0 to 255)
-                const redValue = Math.round(map(zAcceleration, -10, 10, 0, 255));
-
-                // Set the background color of .bar class based on zAcceleration
-                visualizerContainer.style.setProperty("--bar-color", `rgb(${redValue}, 0, 0)`);
-
-                // Move the bars vertically based on yAcceleration
-                visualizerContainer.style.transform = `translateY(${yAcceleration * 2}px)`;
-
-                // Move the bars horizontally based on xAcceleration
-                visualizerContainer.style.transform += ` translateX(${xAcceleration * 2}px)`;
-            }
-
-            function map(value, inMin, inMax, outMin, outMax) {
-                return (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
-            }
-
+            // For devices that do not require permission, start the motion listener
             window.addEventListener("devicemotion", handleMotion);
         }
     });
+});
 </script>
 
 
