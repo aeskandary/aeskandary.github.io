@@ -12,7 +12,8 @@
             background-color: #222;
             color: white;
             overflow: hidden;
-            transition: background-color 0.5s ease; /* Add smooth transition effect */
+            transition: background-color 0.5s ease;
+            margin: 0;
         }
 
         #visualizer-container {
@@ -33,11 +34,11 @@
 
         .bar {
         position: absolute;
-        width: calc((100% - 24px) / 25 - 1px); /* Adjust to evenly distribute bars with space between them */
+        width: calc((100% - 24px) / 25 - 1px); 
         height: 100%;
-        background-color: var(--bar-color, #ff5757); /* Use a CSS variable for dynamic color */
+        background-color: var(--bar-color, #ff5757); 
         animation: bounce 1s infinite alternate;
-        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        box-sizing: border-box; 
         }
 
         @keyframes bounce {
@@ -166,6 +167,56 @@
             left: calc(100% / 25 * 24);
         }
 
+        .bar:nth-child(26n) {
+            animation-delay: 2.4s;
+            left: calc(100% / 25 * 24);
+        }
+
+        .bar:nth-child(27n) {
+            animation-delay: 2.4s;
+            left: calc(100% / 25 * 24);
+        }
+
+        .bar:nth-child(28n) {
+            animation-delay: 2.4s;
+            left: calc(100% / 25 * 24);
+        }
+
+        .bar:nth-child(29n) {
+            animation-delay: 2.4s;
+            left: calc(100% / 25 * 24);
+        }
+
+        .bar:nth-child(30n) {
+            animation-delay: 2.4s;
+            left: calc(100% / 25 * 24);
+        }
+
+        .bar:nth-child(31n) {
+            animation-delay: 2.4s;
+            left: calc(100% / 25 * 24);
+        }
+
+        .bar:nth-child(32n) {
+            animation-delay: 2.4s;
+            left: calc(100% / 25 * 24);
+        }
+
+        .bar:nth-child(33n) {
+            animation-delay: 2.4s;
+            left: calc(100% / 25 * 24);
+        }
+
+        .bar:nth-child(34n) {
+            animation-delay: 2.4s;
+            left: calc(100% / 25 * 24);
+        }
+
+        .bar:nth-child(35n) {
+            animation-delay: 2.4s;
+            left: calc(100% / 25 * 24);
+        }
+
         #accelerationData {
             font-size: 20px;
             margin-top: 20px;
@@ -174,7 +225,7 @@
 </head>
 <body>
 <main role="main">
-<br><br>
+<br><br><br><br>
 <div id="visualizer-container">
     <div class="bar"></div>
     <div class="bar"></div>
@@ -199,7 +250,17 @@
     <div class="bar"></div>
     <div class="bar"></div>
     <div class="bar"></div>
-    <div class="bar"></div>    
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
 </div>
 <br><br>
 <div id="accelerationData">
@@ -210,7 +271,6 @@
         <li>Z-axis: <span id="Accelerometer_z">0</span> m/s<sup>2</sup></li>
     </ul>
 </div>
-
 <button id="startButton">Start Demo</button>
 
 <script>
@@ -222,28 +282,28 @@
             const yAcceleration = event.acceleration.y;
             const zAcceleration = event.acceleration.z;
 
-            // Adjust the scaling factor to increase sensitivity
+            //scaling factor changes sensitivity for accelerometer
             const sensitivityFactor = 5;
 
-            // Map zAcceleration to the hue range (0 to 360)
+            //maps zAcceleration to the hue range (0 to 360)
             const backgroundHue = map(zAcceleration * sensitivityFactor, -10, 10, 0, 360);
 
-            // Set the background color of the body based on zAcceleration
+            //sets body color based on zAcceleration
             document.body.style.backgroundColor = `hsl(${backgroundHue}, 100%, 10%)`;
 
-            // Map yAcceleration to the opposite hue range (180 to 540)
+            //maps yAcceleration to the opposite hue range (180 to 540)
             const barHue = map(yAcceleration * sensitivityFactor, -10, 10, 180, 540);
 
-            // Set the background color of .bar class based on yAcceleration
-            visualizerContainer.style.setProperty("--bar-color", `hsl(${barHue}, 100%, 80%)`);
+            //sets .bar color based on yAcceleration
+            visualizerContainer.style.setProperty("--bar-color", `hsl(${barHue}, 100%, 65%)`);
 
-            // Move the bars vertically based on zAcceleration
+            //move bars vertically based on zAcceleration
             visualizerContainer.style.transform = `translateY(${zAcceleration * 2 * sensitivityFactor}px)`;
 
-            // Move the bars horizontally based on xAcceleration
+            //move bars horizontally based on xAcceleration
             visualizerContainer.style.transform += ` translateX(${xAcceleration * 2 * sensitivityFactor}px)`;
 
-            // Update XYZ data
+            //update numerical data
             document.getElementById("Accelerometer_x").textContent = xAcceleration.toFixed(2);
             document.getElementById("Accelerometer_y").textContent = yAcceleration.toFixed(2);
             document.getElementById("Accelerometer_z").textContent = zAcceleration.toFixed(2);
@@ -253,25 +313,25 @@
             return (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
         }
     
-        // Add an event listener to a user gesture, e.g., a button click
+        //event listener wasn't properly working until this button was added
+        //this is because some mobile phones require a user event to activate the accelerometer
         document.getElementById("startButton").addEventListener("click", function () {
-            // Request permission for iOS 13+ devices
+            //requests permission if needed
+            //this will open up a dialogue box on mobile
             if (typeof DeviceMotionEvent.requestPermission === "function") {
                 DeviceMotionEvent.requestPermission().then(response => {
                     if (response === "granted") {
-                        // Start the motion listener after permission is granted
                         window.addEventListener("devicemotion", handleMotion);
                     } else {
                         console.log("Permission denied");
                     }
                 }).catch(console.error);
             } else {
-                // For devices that do not require permission, start the motion listener
                 window.addEventListener("devicemotion", handleMotion);
             }
         });
     });
-    </script>
+</script>
 
 </main>
 </body>
