@@ -225,17 +225,17 @@
             // Adjust the scaling factor to increase sensitivity
             const sensitivityFactor = 5;
 
-            // Map zAcceleration to the color range (0 to 255)
-            const darkValue = Math.round(map(zAcceleration * sensitivityFactor, -10, 10, 0, 255));
+            // Map zAcceleration to the hue range (0 to 360)
+            const backgroundHue = map(zAcceleration * sensitivityFactor, -10, 10, 0, 360);
 
             // Set the background color of the body based on zAcceleration
-            document.body.style.backgroundColor = `rgb(${darkValue}, ${darkValue}, ${darkValue})`;
+            document.body.style.backgroundColor = `hsl(${backgroundHue}, 100%, 10%)`;
 
-            // Map yAcceleration to the color range (0 to 255)
-            const redValue = Math.round(map(yAcceleration * sensitivityFactor, -10, 10, 0, 255));
+            // Map yAcceleration to the opposite hue range (180 to 540)
+            const barHue = map(yAcceleration * sensitivityFactor, -10, 10, 180, 540);
 
             // Set the background color of .bar class based on yAcceleration
-            visualizerContainer.style.setProperty("--bar-color", `rgb(${redValue}, 0, 0)`);
+            visualizerContainer.style.setProperty("--bar-color", `hsl(${barHue}, 100%, 80%)`);
 
             // Move the bars vertically based on zAcceleration
             visualizerContainer.style.transform = `translateY(${zAcceleration * 2 * sensitivityFactor}px)`;
