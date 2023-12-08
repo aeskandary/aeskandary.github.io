@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Accelerometer with Visualizer</title>
+    <title>Vibe Visualizer</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,6 +12,7 @@
             background-color: #222;
             color: white;
             overflow: hidden;
+            transition: background-color 0.5s ease; /* Add smooth transition effect */
         }
 
         #visualizer-container {
@@ -173,10 +174,7 @@
 </head>
 <body>
 <main role="main">
-
-<h1>Accelerometer with Visualizer</h1>
-<p><b>This demo page features accelerometer data and a simple animated visualizer effect.</b></p>
-
+<br><br>
 <div id="visualizer-container">
     <div class="bar"></div>
     <div class="bar"></div>
@@ -203,10 +201,8 @@
     <div class="bar"></div>
     <div class="bar"></div>    
 </div>
-
+<br><br>
 <div id="accelerationData">
-    <p>Num. of datapoints: <span id="num-observed-events">0</span></p>
-
     <h4>Accelerometer XYZ Data</h4>
     <ul>
         <li>X-axis: <span id="Accelerometer_x">0</span> m/s<sup>2</sup></li>
@@ -218,53 +214,64 @@
 <button id="startButton">Start Demo</button>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const visualizerContainer = document.getElementById("visualizer-container");
+    document.addEventListener("DOMContentLoaded", function () {
+        const visualizerContainer = document.getElementById("visualizer-container");
+    
+        function handleMotion(event) {
+            const xAcceleration = event.acceleration.x;
+            const yAcceleration = event.acceleration.y;
+            const zAcceleration = event.acceleration.z;
 
-    function handleMotion(event) {
-        const xAcceleration = event.acceleration.x;
-        const yAcceleration = event.acceleration.y;
-        const zAcceleration = event.acceleration.z;
+            // Adjust the scaling factor to increase sensitivity
+            const sensitivityFactor = 5;
 
-        // Map zAcceleration to the color range (0 to 255)
-        const redValue = Math.round(map(zAcceleration, -10, 10, 0, 255));
+            // Map zAcceleration to the color range (0 to 255)
+            const darkValue = Math.round(map(zAcceleration * sensitivityFactor, -10, 10, 0, 255));
 
-        // Set the background color of .bar class based on zAcceleration
-        visualizerContainer.style.setProperty("--bar-color", `rgb(${redValue}, 0, 0)`);
+            // Set the background color of the body based on zAcceleration
+            document.body.style.backgroundColor = `rgb(${darkValue}, ${darkValue}, ${darkValue})`;
 
-        // Move the bars vertically based on yAcceleration
-        visualizerContainer.style.transform = `translateY(${yAcceleration * 2}px)`;
+            // Map yAcceleration to the color range (0 to 255)
+            const redValue = Math.round(map(yAcceleration * sensitivityFactor, -10, 10, 0, 255));
 
-        // Move the bars horizontally based on xAcceleration
-        visualizerContainer.style.transform += ` translateX(${xAcceleration * 2}px)`;
-    }
+            // Set the background color of .bar class based on yAcceleration
+            visualizerContainer.style.setProperty("--bar-color", `rgb(${redValue}, 0, 0)`);
 
-    function map(value, inMin, inMax, outMin, outMax) {
-        return (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
-    }
+            // Move the bars vertically based on zAcceleration
+            visualizerContainer.style.transform = `translateY(${zAcceleration * 2 * sensitivityFactor}px)`;
 
-    // Add an event listener to a user gesture, e.g., a button click
-    document.getElementById("startButton").addEventListener("click", function () {
-        // Request permission for iOS 13+ devices
-        if (typeof DeviceMotionEvent.requestPermission === "function") {
-            DeviceMotionEvent.requestPermission().then(response => {
-                if (response === "granted") {
-                    // Start the motion listener after permission is granted
-                    window.addEventListener("devicemotion", handleMotion);
-                } else {
-                    console.log("Permission denied");
-                }
-            }).catch(console.error);
-        } else {
-            // For devices that do not require permission, start the motion listener
-            window.addEventListener("devicemotion", handleMotion);
+            // Move the bars horizontally based on xAcceleration
+            visualizerContainer.style.transform += ` translateX(${xAcceleration * 2 * sensitivityFactor}px)`;
+
+            // Update XYZ data
+            document.getElementById("Accelerometer_x").textContent = xAcceleration.toFixed(2);
+            document.getElementById("Accelerometer_y").textContent = yAcceleration.toFixed(2);
+            document.getElementById("Accelerometer_z").textContent = zAcceleration.toFixed(2);
         }
+
+        function map(value, inMin, inMax, outMin, outMax) {
+            return (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+        }
+    
+        // Add an event listener to a user gesture, e.g., a button click
+        document.getElementById("startButton").addEventListener("click", function () {
+            // Request permission for iOS 13+ devices
+            if (typeof DeviceMotionEvent.requestPermission === "function") {
+                DeviceMotionEvent.requestPermission().then(response => {
+                    if (response === "granted") {
+                        // Start the motion listener after permission is granted
+                        window.addEventListener("devicemotion", handleMotion);
+                    } else {
+                        console.log("Permission denied");
+                    }
+                }).catch(console.error);
+            } else {
+                // For devices that do not require permission, start the motion listener
+                window.addEventListener("devicemotion", handleMotion);
+            }
+        });
     });
-});
-</script>
-
-
-
+    </script>
 
 </main>
 </body>
