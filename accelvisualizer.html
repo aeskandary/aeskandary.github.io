@@ -12,10 +12,10 @@
             background-color: #222;
             color: white;
             overflow: hidden;
+            /*removed transition effect - it was making the change in color not very noticeable */
             /*transition: background-color 0.1s linear;*/
             margin: 0;
         }
-
         #visualizer-container {
             position: relative;
             width: 100%;
@@ -26,7 +26,7 @@
             padding: 10px;
             background-color: #4CAF50;
             color: white;
-            border: none;
+            border: 1px double black;
             border-radius: 5px;
             cursor: pointer;
             margin-top: 20px;
@@ -38,7 +38,7 @@
         height: 100%;
         background-color: var(--bar-color, #ff5757); 
         animation: bounce 1s infinite alternate;
-        box-sizing: border-box; 
+        box-sizing: border-box;
         }
 
         @keyframes bounce {
@@ -46,7 +46,7 @@
                 transform: scaleY(1.5);
             }
         }
-
+        /*spacing so that the bars have a tiny bit of gutter space between them */
         .bar:nth-child(2n) {
             animation-delay: 0.1s;
             left: calc(100% / 25);
@@ -221,6 +221,9 @@
             font-size: 20px;
             margin-top: 20px;
         }
+        /*space background
+        this is applied to a div that takes up the whole screen and is rendered behind everything else
+        the low opacity makes it so that it is still effected by the changing colors*/
         #background-img {
             position: fixed;
             top: 0;
@@ -299,25 +302,25 @@
             //scaling factor changes sensitivity for accelerometer
             const sensitivityFactor = 5;
 
-            //maps zAcceleration to the hue range (240 to 360)
+            //maps zAcceleration a the hue range (240 to 360)
             const backgroundHue = map(zAcceleration * sensitivityFactor, -10, 10, 240, 360);
 
             //sets body color based on zAcceleration
             document.body.style.backgroundColor = `hsl(${backgroundHue}, 100%, 10%)`;
 
-            //maps yAcceleration to the opposite hue range (180 to 540)
+            //maps yAcceleration to another hue range (180 to 540), mostly intended to be opposite colors from the background
             const barHue = map(yAcceleration * sensitivityFactor, -10, 10, 180, 540);
 
             //sets .bar color based on yAcceleration
             visualizerContainer.style.setProperty("--bar-color", `hsl(${barHue}, 100%, 65%)`);
 
-            //move bars vertically based on zAcceleration
+            //moves bars vertically based on zAcceleration
             visualizerContainer.style.transform = `translateY(${zAcceleration * 2 * sensitivityFactor}px)`;
 
-            //move bars horizontally based on xAcceleration
+            //moves bars horizontally based on xAcceleration
             visualizerContainer.style.transform += ` translateX(${xAcceleration * 2 * sensitivityFactor}px)`;
 
-            //update numerical data
+            //updates numerical data
             document.getElementById("Accelerometer_x").textContent = xAcceleration.toFixed(2);
             document.getElementById("Accelerometer_y").textContent = yAcceleration.toFixed(2);
             document.getElementById("Accelerometer_z").textContent = zAcceleration.toFixed(2);
