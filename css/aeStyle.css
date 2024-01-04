@@ -8,6 +8,7 @@
     background-color: rgba(256, 256, 256, 0.1);
     font-size:1em;
     border-radius:10%;
+    transition: 0.3s;
 }
 .post{
     background-color: darkcyan;
@@ -16,7 +17,7 @@
 }
 .photo{
     background-color: darkcyan;
-    background-image: url("../assets/graphics/pinkUnsplash.png");
+    background-image: url("../assets/graphics/unsplashPinkV2.png");
     background-attachment: fixed;
     background-clip: padding-box;
 	align-content: center;
@@ -28,6 +29,7 @@
 .postButton{
     font-size:.9em;
     border-radius:10%;
+    transition: 0.3s;
 }
 .break{
 	padding: 1em;
@@ -47,15 +49,49 @@
 	color: white;
 	text-shadow: 1px 1px black;
 }
+.photosub{
+    font-size:1em;
+}
+.gallery-arrow {
+    margin-left: 30%;
+    display: inline-block;
+    animation: bounce 1s infinite;
+}
+.photoSource{
+    object-fit: cover; 
+    height: 100%;
+}
+.grid-mode .arrowbox{
+    display: none;
+}
+@media screen and (max-width: 768px) {
+    .list-mode .arrowbox{
+        display: block;
+    }
+}
+.arrowbox{
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    cursor: pointer;
+    color: cyan;
+  }
+.left-arrow {
+    left: 7%;
+}
+.right-arrow {
+    right: 7%;
+}
 #homePage{
-	background-image: url("../assets/graphics/blueUnsplash-min.jpg");
+	background-image: url("../assets/graphics/unsplashV2.png");
 }
 #photoPage{
 	background-image: url("../assets/graphics/greenUnsplash.png");
 }
 #meow{
     background-color: darkcyan;
-    background-image: url("../assets/graphics/pinkUnsplash.png");
+    background-image: url("../assets/graphics/unsplashPinkV2.png");
     background-attachment: fixed;
     background-clip: padding-box;
 	background-position: bottom;
@@ -68,20 +104,17 @@
 	background-position: bottom;
 }
 #name {
-    font-size: 4em;
+    font-size: 5.5em;
 }
 @media screen and (max-width: 768px) {
     #name {
         font-size: 3em;
     }
 }
-#linkButton:hover{
-    color: cyan;
-    border-color: darkcyan;
-}
 #lineBreak{
     margin-top:-2%;
     background-color: darkcyan;
+    transition: 0.3s;
 }
 #lineBreak:hover{
     background-color: white;
@@ -91,6 +124,7 @@
 }
 #downArrow{
     font-size:2em;
+    transition: 0.3s;
 }
 #downArrow:hover{
     color: darkcyan;
@@ -98,7 +132,7 @@
 #arrow-container {
     display: inline-block;
     animation: bounce 1s infinite;
-  }
+}
 #posts{
     padding-bottom:5%;
     overflow-x: hidden;
