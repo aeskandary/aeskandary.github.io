@@ -8,14 +8,11 @@
     transition: 0.3s;
 }
 .post{
-    background-color: rgba(256, 256, 256, 0.05) !important;
+    background-color: rgba(0,0,0,0) !important;
     background-clip: padding-box;
 }
 .photo{
-    background-color: darkcyan;
-    background-image: url("../assets/graphics/unsplashPinkV2.png");
-    background-attachment: fixed;
-    background-clip: padding-box;
+    background-color: rgba(0,0,0,0) !important;
 	align-content: center;
 	text-align: center;
 }
@@ -36,11 +33,11 @@
 	text-shadow: 2px 2px black;
 }
 .card-content{
-	background-image: url("../assets/graphics/whiteUnsplash.png");
-    background-attachment: fixed;
-    background-clip: padding-box;
 	color: white;
 	text-shadow: 1px 1px black;
+}
+.card{
+    background-color: rgba(0, 70, 90, 0.77);
 }
 .photosub{
     font-size:1em;
@@ -85,7 +82,7 @@
 	background-image: url("../assets/graphics/unsplashV2.png");
 }
 #photoPage{
-	background-image: url("../assets/graphics/greenUnsplash.png");
+	background-image: url("../assets/graphics/unsplashPinkV2.png");
 }
 #meow{
     background-image: url("../assets/graphics/unsplashPinkV2.png");
