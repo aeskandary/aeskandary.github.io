@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const zoomableImage = document.querySelectorAll('.zoomable-image');
+  mediumZoom(zoomableImage, {
+    background: 'rgba(25, 25, 25, 0.9)', // Set the same background color as in your CSS
+  });
   //open/close a modal
   function openModal($el) {
     $el.classList.add('is-active');
@@ -67,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //scrolls to next gallery item
         nextGalleryItem.scrollIntoView({
           behavior: 'smooth',
-          block: 'start',
+          block: 'end',
         });
   
         //updates the active class
@@ -82,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //scrolls to previous gallery item
         prevGalleryItem.scrollIntoView({
           behavior: 'smooth',
-          block: 'start',
+          block: 'end',
         });
   
         //updates the active class
