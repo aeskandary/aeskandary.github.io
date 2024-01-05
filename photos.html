@@ -38,22 +38,26 @@
       src="https://kit.fontawesome.com/4b0ebb4330.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600&family=Source+Code+Pro&display=swap');
+    </style>
   </head>
 
   <body class="pageBody grid-mode">
     <section class="hero is-info is-small pageBody" id="photoPage">
       <div class="hero-body">
+        <a class="button is-white is-outlined linkButton" href="index.html">
+          <span class="icon">
+            <i class="fa fa-chevron-left"></i>
+          </span>
+          <span>Home</span>
+        </a>
         <div class="container has-text-centered">
           <div class="column is-6 is-offset-3" id="infoArea">
             <h1 class="title" id="name">Photo Gallery</h1>
             <hr id="lineBreak" />
-            <a class="button is-white is-outlined linkButton" href="index.html">
-              <span class="icon">
-                <i class="fa fa-home"></i>
-              </span>
-              <span>Home</span>
-            </a>
-			<br class="is-hidden-mobile"><br class="is-hidden-mobile">
+			<br class="is-hidden-mobile">
 			<a class="button is-white is-outlined linkButton is-hidden-mobile" id="list-view-button" href="photos.html#photos">
 				<span class="icon">
 				  <i class="fa fa-bars"></i>
@@ -74,10 +78,10 @@
     <section id="photos">
       <div class="columns is-multiline notification is-primary photo">
         <div class="column is-4 gallery-item active">
-          <div class="card">
-            <div class="card-image js-modal-trigger" data-target="p05">
+          <div class="card is-fullheight">
+            <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource" src="assets/graphics/AE_05.jpg" alt="Chiesa di San Luigi dei Francesi" />
+                <img class="photoSource zoomable-image" src="assets/graphics/AE_05.jpg" alt="Chiesa di San Luigi dei Francesi" />
               </figure>
             </div>
             <div class="card-content">
@@ -90,13 +94,13 @@
               </div>
             </div>
           </div>
-        </div>        
+        </div>   
 
         <div class="column is-4 gallery-item">
-          <div class="card">
-            <div class="card-image js-modal-trigger" data-target="p016">
+          <div class="card is-fullheight">
+            <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource" src="assets/graphics/AE_016.jpg" alt="MAXXI - National Museum Lobby" />
+                <img class="photoSource zoomable-image" src="assets/graphics/AE_016.jpg" alt="MAXXI - National Museum Lobby" />
               </figure>
             </div>
             <div class="card-content">
@@ -106,17 +110,17 @@
                 Roma, Italia
                 <br />
                 <time datetime="2023">2023</time>
-
               </div>
             </div>
           </div>
         </div>
+        
 
         <div class="column is-4 gallery-item">
-          <div class="card">
-            <div class="card-image js-modal-trigger" data-target="p01">
+          <div class="card is-fullheight">
+            <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource" src="assets/graphics/AE_01.jpg" alt="Galleria Umberto I Ceiling" />
+                <img class="photoSource zoomable-image" src="assets/graphics/AE_01.jpg" alt="Galleria Umberto I Ceiling" />
               </figure>
             </div>
             <div class="card-content">
@@ -126,17 +130,17 @@
                 Napoli, Italia
                 <br />
                 <time datetime="2023">2023</time>
-
               </div>
             </div>
           </div>
         </div>
+        
 
         <div class="column is-4 gallery-item">
-          <div class="card">
-            <div class="card-image js-modal-trigger" data-target="p011">
+          <div class="card is-fullheight">
+            <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource" src="assets/graphics/AE_011.jpg" alt="Pantheon Entrance" />
+                <img class="photoSource zoomable-image" src="assets/graphics/AE_011.jpg" alt="Pantheon Entrance" />
               </figure>
             </div>
             <div class="card-content">
@@ -146,17 +150,17 @@
                 Roma, Italia
                 <br />
                 <time datetime="2023">2023</time>
-
               </div>
             </div>
           </div>
         </div>
+        
 
         <div class="column is-4 gallery-item">
-          <div class="card">
-            <div class="card-image js-modal-trigger" data-target="p08">
+          <div class="card is-fullheight">
+            <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource" src="assets/graphics/AE_08.jpg" alt="Restaurant at Night" />
+                <img class="photoSource zoomable-image" src="assets/graphics/AE_08.jpg" alt="Restaurant at Night" />
               </figure>
             </div>
             <div class="card-content">
@@ -166,17 +170,17 @@
                 Roma, Italia
                 <br />
                 <time datetime="2023">2023</time>
-
               </div>
             </div>
           </div>
         </div>
+        
 
         <div class="column is-4 gallery-item">
-          <div class="card">
-            <div class="card-image js-modal-trigger" data-target="p02">
+          <div class="card is-fullheight">
+            <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource" src="assets/graphics/AE_02.jpg" alt="Musée d'Orsay Clock" />
+                <img class="photoSource zoomable-image" src="assets/graphics/AE_02.jpg" alt="Musée d'Orsay Clock" />
               </figure>
             </div>
             <div class="card-content">
@@ -186,17 +190,17 @@
                 Paris, France
                 <br />
                 <time datetime="2023">2023</time>
-
               </div>
             </div>
           </div>
         </div>
+        
 
         <div class="column is-4 gallery-item">
-          <div class="card">
-            <div class="card-image js-modal-trigger" data-target="p010">
+          <div class="card is-fullheight">
+            <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource" src="assets/graphics/AE_010.jpg" alt="De Wallen" />
+                <img class="photoSource zoomable-image" src="assets/graphics/AE_010.jpg" alt="De Wallen" />
               </figure>
             </div>
             <div class="card-content">
@@ -206,17 +210,17 @@
                 Amsterdam, Nederland
                 <br />
                 <time datetime="2023">2023</time>
-
               </div>
             </div>
           </div>
         </div>
+        
 
         <div class="column is-4 gallery-item">
-          <div class="card">
-            <div class="card-image js-modal-trigger" data-target="p07">
+          <div class="card is-fullheight">
+            <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource" src="assets/graphics/AE_07.jpg" alt="Piazza del Popolo" />
+                <img class="photoSource zoomable-image" src="assets/graphics/AE_07.jpg" alt="Piazza del Popolo" />
               </figure>
             </div>
             <div class="card-content">
@@ -226,17 +230,16 @@
                 Roma, Italia
                 <br />
                 <time datetime="2023">2023</time>
-
               </div>
             </div>
           </div>
-        </div>
+        </div>        
 
         <div class="column is-4 gallery-item">
-          <div class="card">
-            <div class="card-image js-modal-trigger" data-target="p015">
+          <div class="card is-fullheight">
+            <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource" src="assets/graphics/AE_015.jpg" alt="Reflective Canal" />
+                <img class="photoSource zoomable-image" src="assets/graphics/AE_015.jpg" alt="Reflective Canal" />
               </figure>
             </div>
             <div class="card-content">
@@ -246,17 +249,17 @@
                 Venezia, Italia
                 <br />
                 <time datetime="2023">2023</time>
-
               </div>
             </div>
           </div>
         </div>
+        
 
         <div class="column is-4 gallery-item">
-          <div class="card">
-            <div class="card-image js-modal-trigger" data-target="p017">
+          <div class="card is-fullheight">
+            <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource" src="assets/graphics/AE_017.jpg" alt="Alfa Romeo" />
+                <img class="photoSource zoomable-image" src="assets/graphics/AE_017.jpg" alt="Alfa Romeo - Pasolini Exhibit" />
               </figure>
             </div>
             <div class="card-content">
@@ -266,17 +269,17 @@
                 Roma, Italia
                 <br />
                 <time datetime="2023">2023</time>
-
               </div>
             </div>
           </div>
         </div>
+        
 
         <div class="column is-4 gallery-item">
           <div class="card">
-            <div class="card-image js-modal-trigger" data-target="p06">
+            <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource" src="assets/graphics/AE_06.jpg" alt="MAXXI - National Museum Stairs" />
+                <img class="photoSource zoomable-image" src="assets/graphics/AE_06.jpg" alt="MAXXI - National Museum Stairs" />
               </figure>
             </div>
             <div class="card-content">
@@ -286,17 +289,17 @@
                 Roma, Italia
                 <br />
                 <time datetime="2023">2023</time>
-
               </div>
             </div>
           </div>
         </div>
+        
 
         <div class="column is-4 gallery-item">
           <div class="card">
-            <div class="card-image js-modal-trigger" data-target="p014">
+            <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource" src="assets/graphics/AE_014.jpg" alt="Smoke and Lights"/>
+                <img class="photoSource zoomable-image" src="assets/graphics/AE_014.jpg" alt="Smoke and Lights"/>
               </figure>
             </div>
             <div class="card-content">
@@ -306,122 +309,13 @@
                 Roma, Italia
                 <br />
                 <time datetime="2023">2023</time>
-
               </div>
             </div>
           </div>
         </div>
+        
       </div>
     </section>
-
-    <div id="p05" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-        <p class="image is-4by3">
-          <img class="photoSource" src="assets/graphics/AE_05.jpg" alt="" />
-        </p>
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-    <div id="p016" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-        <p class="image is-4by3">
-          <img class="photoSource" src="assets/graphics/AE_016.jpg" alt="" />
-        </p>
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-    <div id="p01" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-        <p class="image is-4by3">
-          <img class="photoSource" src="assets/graphics/AE_01.jpg" alt="" />
-        </p>
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-    <div id="p011" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-        <p class="image is-4by3">
-          <img class="photoSource" src="assets/graphics/AE_011.jpg" alt="" />
-        </p>
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-    <div id="p08" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-        <p class="image is-4by3">
-          <img class="photoSource" src="assets/graphics/AE_08.jpg" alt="" />
-        </p>
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-    <div id="p02" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-        <p class="image is-4by3">
-          <img class="photoSource" src="assets/graphics/AE_02.jpg" alt="" />
-        </p>
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-    <div id="p010" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-        <p class="image is-4by3">
-          <img class="photoSource" src="assets/graphics/AE_010.jpg" alt="" />
-        </p>
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-    <div id="p07" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-        <p class="image is-4by3">
-          <img class="photoSource" src="assets/graphics/AE_07.jpg" alt="" />
-        </p>
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-    <div id="p015" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-        <p class="image is-4by3">
-          <img class="photoSource" src="assets/graphics/AE_015.jpg" alt="" />
-        </p>
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-    <div id="p017" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-        <p class="image is-4by3">
-          <img class="photoSource" src="assets/graphics/AE_017.jpg" alt="" />
-        </p>
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-    <div id="p06" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-        <p class="image is-4by3">
-          <img class="photoSource" src="assets/graphics/AE_06.jpg" alt="" />
-        </p>
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-    <div id="p014" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-        <p class="image is-4by3">
-          <img class="photoSource" src="assets/graphics/AE_014.jpg" alt="" />
-        </p>
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
   </body>
 
   <div class="arrowbox left-arrow" onclick="scrollToPreviousPhoto()">
