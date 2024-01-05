@@ -45,15 +45,18 @@
     <script src="https://cdn.jsdelivr.net/gh/nk-o/jarallax/dist/jarallax.min.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-        jarallax(document.querySelectorAll('.jarallax'), {
+        jarallax(document.querySelectorAll('.jarallax-main'), {
+            type: 'scroll',
+        })
+        jarallax(document.querySelectorAll('.jarallax-side'), {
             type: 'scroll-opacity',
         })
       });
     </script>  
   </head>
 
-  <body class="pageBody jarallax" id="homePage">
-    <section class="hero is-info is-fullheight pageBody jarallax">
+  <body class="jarallax-main" id="homePage">
+    <section class="hero is-info is-fullheight pageBody">
       <div class="hero-body">
         <div class="container has-text-centered">
           <div class="column is-6 is-offset-3" id="infoArea">
@@ -99,7 +102,7 @@
 
     <section id="posts">
       <div class="tile is-ancestor">
-        <article class="tile is-child notification is-primary post jarallax" id="meow">
+        <article class="tile is-child notification is-primary post jarallax-side" id="meow">
           <p class="title shade">Meow Tab</p>
           <p class="subtitle shade">Project - The purrfect chrome extension.</p>
           <a
@@ -117,7 +120,7 @@
       <span class="break"></span>
 
       <div class="tile is-ancestor">
-        <article class="tile is-child notification is-primary post jarallax" id="photography">
+        <article class="tile is-child notification is-primary post jarallax-side" id="photography">
           <p class="title shade">Photography</p>
           <p class="subtitle shade">
             Art - Miscellanous photos, post-produced in Photoshop.

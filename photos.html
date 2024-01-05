@@ -39,13 +39,21 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/nk-o/jarallax/dist/jarallax.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        jarallax(document.querySelectorAll('.jarallax'), {
+            type: 'scroll',
+        })
+      });
+    </script>  
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600&family=Source+Code+Pro&display=swap');
     </style>
   </head>
 
-  <body class="pageBody grid-mode">
-    <section class="hero is-info is-small pageBody" id="photoPage">
+  <body class="grid-mode jarallax" id="photoPage">
+    <section class="hero is-info is-small pageBody">
       <div class="hero-body">
         <a class="button is-white is-outlined linkButton" href="index.html">
           <span class="icon">
