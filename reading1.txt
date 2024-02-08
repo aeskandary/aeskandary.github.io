@@ -1,0 +1,21 @@
+Gartner Insights - misuse of the term “microservice”.
+
+While reading the Gartner paper, a part of it that stood out to me was the brief section titled, Frequent Misuse of the Term “Microservices”. As someone who didn’t really understand what a microservice was until a short while ago, I think this part of the reading could be very informative. Part of understanding what a microservice is, is understanding what a microservice isn’t.
+
+According to the reading, the following concepts are not microservices but are frequently, and incorrectly, assumed to be:
+
+
+A reusable service
+Any service with a REST API
+Any software component
+Any application deployed in a container
+An integration technology
+A SaaS capability
+
+I’m personally guilty of believing some of the same misconceptions. Before starting this course a few weeks ago, I never really gave much thought to the term “microservice”. I just assumed microservices were reusable components. 
+
+However, in reality, reusable services are simply just classified as services. The reuse creates dependencies, and that reduces both the independence and agility of the service. In fact, the reading goes as far as saying that reuse is an antipattern in the context of microservices - independence and agility are very important. 
+
+The paper also explains that while all microservices are software components, not all software components are microservices. Microservices need to be independent, tightly-scoped, and they must follow Measurement Systems Analysis design constraints in order to increase agility and scalability. Not all software components fit that definition.
+
+Understanding these common misconceptions is crucial background information for beginners who are building their understanding of what a microservice is and how to develop one. 
