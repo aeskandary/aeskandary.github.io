@@ -8,13 +8,9 @@
     transition: 0.3s;
 }
 .post{
+    border: 1px solid black;
     background-color: rgba(0,0,0,0) !important;
     background-clip: padding-box;
-}
-.photo{
-    background-color: rgba(0,0,0,0) !important;
-	align-content: center;
-	text-align: center;
 }
 .postButton{
     font-size:.9em;
@@ -75,25 +71,57 @@
     right: 7%;
 }
 .modal-image{
-    min-width: 80%; /* Adjust the width as per your needs */
-    margin: 0 auto;  /* Center the modal on the screen */
+    min-width: 80%;
+    margin: 0 auto;
 }
-#homePage{
-	background-image: url("../assets/graphics/unsplashV2.png");
+.jarallax-main{
+    will-change: transform;
 }
-#photoPage{
-	background-image: url("../assets/graphics/unsplashPinkV2.png");
+.jarallax-side{
+    will-change: transform;
 }
+/* loading appropriately-sized background graphic depending on screen size */
+#homePage {
+    background-image: url('../assets/graphics/background/unsplashBase/unsplashBase_md.webp');
+}
+    @media only screen and (min-width: 768px) {
+        #homePage {
+        background-image: url('../assets/graphics/background/unsplashBase/unsplashBase_lg.webp');
+        }
+    } 
+#photoPage {
+    background-image: url('../assets/graphics/background/unsplashDesat/unsplashDesat_md.webp');
+}
+    @media only screen and (min-width: 768px) {
+        #photoPage {
+            background-image: url('../assets/graphics/background/unsplashDesat/unsplashDesat_lg.webp');
+        }
+    } 
 #meow{
-    background-image: url("../assets/graphics/unsplashPinkV2.png");
-    background-clip: padding-box;
-	background-position: bottom;
+    background-image: url('../assets/graphics/background/unsplashBlade/unsplashBlade_md.webp');
 }
+    @media only screen and (min-width: 768px) {
+        #meow {
+            background-image: url('../assets/graphics/background/unsplashBlade/unsplashBlade_lg.webp');
+        }
+    } 
 #photography{
-    background-image: url("../assets/graphics/greenUnsplash.png");
-    background-clip: padding-box;
-	background-position: bottom;
+    background-image: url('../assets/graphics/background/unsplashBlade/unsplashBlade_md.webp');
 }
+    @media only screen and (min-width: 768px) {
+        #photography {
+            background-image: url('../assets/graphics/background/unsplashBlade/unsplashBlade_lg.webp');
+        }
+    } 
+#accel{
+    background-image: url('../assets/graphics/background/unsplashBlade/unsplashBlade_md.webp');
+}
+    @media only screen and (min-width: 768px) {
+        #accel {
+            background-image: url('../assets/graphics/background/unsplashBlade/unsplashBlade_lg.webp');
+        }
+    } 
+
 #name {
     font-size: 5.5em;
 }
@@ -140,6 +168,6 @@
       transform: translateY(-5px);
     }
   }
-  html {
-    scroll-behavior: smooth;
-  }
+html {
+scroll-behavior: smooth;
+}

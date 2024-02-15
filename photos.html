@@ -42,8 +42,9 @@
     <script src="https://cdn.jsdelivr.net/gh/nk-o/jarallax/dist/jarallax.min.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-        jarallax(document.querySelectorAll('.jarallax'), {
+        jarallax(document.querySelectorAll('.jarallax-main'), {
             type: 'scroll',
+            speed: 0.01,
         })
       });
     </script>  
@@ -52,7 +53,7 @@
     </style>
   </head>
 
-  <body class="grid-mode jarallax" id="photoPage">
+  <body class="grid-mode jarallax-main" id="photoPage">
     <section class="hero is-info is-small pageBody">
       <div class="hero-body">
         <a class="button is-white is-outlined linkButton" href="index.html">
@@ -84,12 +85,12 @@
     </section>
 
     <section id="photos">
-      <div class="columns is-multiline notification is-primary photo">
+      <div class="columns is-multiline notification is-primary pageBody">
         <div class="column is-4 gallery-item active">
           <div class="card is-fullheight">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/AE_05.jpg" alt="Chiesa di San Luigi dei Francesi" />
+                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_05.webp" data-zoom-src="assets/graphics/photos/hq/AE_05.webp" alt="Chiesa di San Luigi dei Francesi" />
               </figure>
             </div>
             <div class="card-content">
@@ -108,7 +109,7 @@
           <div class="card is-fullheight">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/AE_016.jpg" alt="MAXXI - National Museum Lobby" />
+                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_016.webp" data-zoom-src="assets/graphics/photos/hq/AE_016.webp" alt="MAXXI - National Museum Lobby" />
               </figure>
             </div>
             <div class="card-content">
@@ -128,7 +129,7 @@
           <div class="card is-fullheight">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/AE_01.jpg" alt="Galleria Umberto I Ceiling" />
+                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_01.webp" data-zoom-src="assets/graphics/photos/hq/AE_01.webp" alt="Galleria Umberto I Ceiling" />
               </figure>
             </div>
             <div class="card-content">
@@ -148,7 +149,7 @@
           <div class="card is-fullheight">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/AE_011.jpg" alt="Pantheon Entrance" />
+                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_011.webp" data-zoom-src="assets/graphics/photos/hq/AE_011.webp" alt="Pantheon Entrance" />
               </figure>
             </div>
             <div class="card-content">
@@ -168,7 +169,7 @@
           <div class="card is-fullheight">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/AE_08.jpg" alt="Restaurant at Night" />
+                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_08.webp" data-zoom-src="assets/graphics/photos/hq/AE_08.webp" alt="Restaurant at Night" />
               </figure>
             </div>
             <div class="card-content">
@@ -188,7 +189,7 @@
           <div class="card is-fullheight">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/AE_02.jpg" alt="Musée d'Orsay Clock" />
+                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_02.webp" data-zoom-src="assets/graphics/photos/hq/AE_02.webp" alt="Musée d'Orsay Clock" />
               </figure>
             </div>
             <div class="card-content">
@@ -208,7 +209,7 @@
           <div class="card is-fullheight">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/AE_010.jpg" alt="De Wallen" />
+                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_010.webp" data-zoom-src="assets/graphics/photos/hq/AE_010.webp" alt="De Wallen" />
               </figure>
             </div>
             <div class="card-content">
@@ -228,7 +229,7 @@
           <div class="card is-fullheight">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/AE_07.jpg" alt="Piazza del Popolo" />
+                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_07.webp" data-zoom-src="assets/graphics/photos/hq/AE_07.webp" alt="Piazza del Popolo" />
               </figure>
             </div>
             <div class="card-content">
@@ -247,7 +248,7 @@
           <div class="card is-fullheight">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/AE_015.jpg" alt="Reflective Canal" />
+                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_015.webp" data-zoom-src="assets/graphics/photos/hq/AE_015.webp" alt="Reflective Canal" />
               </figure>
             </div>
             <div class="card-content">
@@ -267,7 +268,7 @@
           <div class="card is-fullheight">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/AE_017.jpg" alt="Alfa Romeo - Pasolini Exhibit" />
+                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_017.webp" data-zoom-src="assets/graphics/photos/hq/AE_017.webp" alt="Alfa Romeo - Pasolini Exhibit" />
               </figure>
             </div>
             <div class="card-content">
@@ -287,7 +288,7 @@
           <div class="card">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/AE_06.jpg" alt="MAXXI - National Museum Stairs" />
+                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_06.webp" data-zoom-src="assets/graphics/photos/hq/AE_06.webp" alt="MAXXI - National Museum Stairs" />
               </figure>
             </div>
             <div class="card-content">
@@ -307,7 +308,7 @@
           <div class="card">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/AE_014.jpg" alt="Smoke and Lights"/>
+                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_014.webp" data-zoom-src="assets/graphics/photos/hq/AE_014.webp" alt="Smoke and Lights"/>
               </figure>
             </div>
             <div class="card-content">
@@ -324,14 +325,14 @@
         
       </div>
     </section>
+
+    <div class="arrowbox left-arrow" onclick="scrollToPreviousPhoto()">
+      <i class="fas fa-chevron-left"></i>
+    </div>
+    <div class="arrowbox right-arrow" onclick="scrollToNextPhoto()">
+      <i class="fas fa-chevron-right"></i>
+    </div>
+
   </body>
-
-  <div class="arrowbox left-arrow" onclick="scrollToPreviousPhoto()">
-    <i class="fas fa-chevron-left"></i>
-  </div>
-  <div class="arrowbox right-arrow" onclick="scrollToNextPhoto()">
-    <i class="fas fa-chevron-right"></i>
-  </div>
-
   <script src="js/aeScript.js"></script>
 </html>

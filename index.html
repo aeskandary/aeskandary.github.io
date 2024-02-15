@@ -50,6 +50,8 @@
         })
         jarallax(document.querySelectorAll('.jarallax-side'), {
             type: 'scroll-opacity',
+            speed: '-0.2',
+            imgPosition: '50% 0%',
         })
       });
     </script>  
@@ -101,6 +103,26 @@
     </section>
 
     <section id="posts">
+
+      <span class="break"></span>
+
+      <div class="tile is-ancestor">
+        <article class="tile is-child notification is-primary post jarallax-side" id="accel">
+          <p class="title shade">Accelerometer Visualizer</p>
+          <p class="subtitle shade">
+            Project - A simple web application that utilizes your device's accelerometer data to generate visuals.
+          </p>
+          <a class="button is-white is-outlined postButton" href="accelvisualizer.html">
+            <span class="icon">
+              <i class="fa fa-play"></i>
+            </span>
+            <span>View demo...</span>
+          </a>
+        </article>
+      </div>
+
+      <span class="break"></span>
+
       <div class="tile is-ancestor">
         <article class="tile is-child notification is-primary post jarallax-side" id="meow">
           <p class="title shade">Meow Tab</p>
