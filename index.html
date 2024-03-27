@@ -43,137 +43,212 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/gh/nk-o/jarallax/dist/jarallax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         jarallax(document.querySelectorAll('.jarallax-main'), {
-            type: 'scroll',
+            type: 'scroll-opacity',
+            speed: '-1',
         })
+        // jarallax(document.querySelectorAll('.jarallax-test'), {
+        //     type: 'scroll-opacity',
+        //     speed: '1.5',
+        //     imgPosition: '50% 50%',
+        // })
         jarallax(document.querySelectorAll('.jarallax-side'), {
             type: 'scroll-opacity',
-            speed: '-0.2',
-            imgPosition: '50% 0%',
+            speed: '-3',
+            imgPosition: '50% 50%',
         })
       });
     </script>  
   </head>
 
+
   <body class="jarallax-main" id="homePage">
-    <section class="hero is-info is-fullheight pageBody">
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <div class="column is-6 is-offset-3" id="infoArea">
-            <h1 class="title" id="name">Ali Eskandary</h1>
-            <hr id="lineBreak" />
+    <div class="jarallax-test" id="homePage2">
+      <div id="star-container">
+        <section class="hero is-info is-fullheight pageBody">
+          <div class="hero-body">
+            <div class="container has-text-centered">
+              <div class="column is-6 is-offset-3">
+                <h1 class="title" id="name">Ali Eskandary</h1>
+                <hr id="lineBreak" />
+                <div id="buttonContainer">
+                  <a
+                    class="button is-white is-outlined linkButton"
+                    href="https://github.com/aeskandary"
+                  >
+                    <span class="icon">
+                      <i class="fa fa-github"></i>
+                    </span>
+                    <span>GitHub</span>
+                  </a>
+                  <a
+                    class="button is-white is-outlined linkButton"
+                    href="https://www.linkedin.com/in/alieskandary/"
+                  >
+                    <span class="icon">
+                      <i class="fa fa-linkedin"></i>
+                    </span>
+                    <span>LinkedIn</span>
+                  </a>
+                  <a
+                    class="button is-white is-outlined linkButton"
+                    href="mailto:ali.eskandary@temple.edu"
+                  >
+                    <span class="icon">
+                      <i class="fa fa-envelope"></i>
+                    </span>
+                    <span>Email</span>
+                  </a>
+                </div>
+              </div>
+              <br>
+              <div id="arrow-container">
+                <a href="index.html#posts"
+                  ><i class="fas fa-chevron-down" id="downArrow"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="posts">
+
+        <span class="break"></span>
+
+        <div class="tile is-ancestor">
+          <article class="tile is-child notification is-primary post jarallax-side" id="accel">
+            <p class="title shade">Accelerometer Visualizer</p>
+            <p class="subtitle shade">
+              Project - A simple web application that utilizes your device's accelerometer data to generate visuals.
+            </p>
+            <a class="button is-white is-outlined postButton" href="accelvisualizer.html">
+              <span class="icon">
+                <i class="fa fa-play"></i>
+              </span>
+              <span>View demo...</span>
+            </a>
+          </article>
+        </div>
+
+        <span class="break"></span>
+
+        <div class="tile is-ancestor">
+          <article class="tile is-child notification is-primary post jarallax-side" id="meow">
+            <p class="title shade">Meow Tab</p>
+            <p class="subtitle shade">Project - The purrfect chrome extension.</p>
             <a
-              class="button is-white is-outlined linkButton"
-              href="https://github.com/aeskandary"
+              class="button is-white is-outlined postButton"
+              href="https://github.com/aeskandary/meow-tab"
             >
               <span class="icon">
                 <i class="fa fa-github"></i>
               </span>
-              <span>GitHub</span>
+              <span>Read more on GitHub...</span>
             </a>
-            <a
-              class="button is-white is-outlined linkButton"
-              href="https://www.linkedin.com/in/alieskandary/"
-            >
-              <span class="icon">
-                <i class="fa fa-linkedin"></i>
-              </span>
-              <span>LinkedIn</span>
-            </a>
-            <a
-              class="button is-white is-outlined linkButton"
-              href="mailto:ali.eskandary@temple.edu"
-            >
-              <span class="icon">
-                <i class="fa fa-envelope"></i>
-              </span>
-              <span>Email</span>
-            </a>
-          </div>
-          <br>
-          <div id="arrow-container">
-            <a href="index.html#posts"
-              ><i class="fas fa-chevron-down" id="downArrow"></i
-            ></a>
-          </div>
+          </article>
         </div>
+
+        <span class="break"></span>
+
+        <div class="tile is-ancestor">
+          <article class="tile is-child notification is-primary post jarallax-side" id="photography">
+            <p class="title shade">Photography</p>
+            <p class="subtitle shade">
+              Art - Miscellanous photos, post-produced in Photoshop.
+            </p>
+            <a class="button is-white is-outlined postButton" href="photos.html">
+              <span class="icon">
+                <i class="fa fa-camera"></i>
+              </span>
+              <span>View gallery...</span>
+            </a>
+          </article>
+        </div>
+
+        <!-- <span class="break"></span> -->
+
+        <!-- coming soon 
+        <div class="tile is-ancestor">
+            <article class="tile is-child notification is-primary post">
+              <p class="title">Websites</p>
+              <p class="subtitle">Portfolio - Websites designed using Bootstrap and Bulma.</p>
+              <a class="button is-white is-outlined postButton" href="">
+                <span class="icon">
+                  <i class="fa fa-camera"></i>
+                </span>
+                <span>View gallery...</span>
+              </a>
+            </article>
+        </div>
+        -->
+      </section>
       </div>
-    </section>
-
-    <section id="posts">
-
-      <span class="break"></span>
-
-      <div class="tile is-ancestor">
-        <article class="tile is-child notification is-primary post jarallax-side" id="accel">
-          <p class="title shade">Accelerometer Visualizer</p>
-          <p class="subtitle shade">
-            Project - A simple web application that utilizes your device's accelerometer data to generate visuals.
-          </p>
-          <a class="button is-white is-outlined postButton" href="accelvisualizer.html">
-            <span class="icon">
-              <i class="fa fa-play"></i>
-            </span>
-            <span>View demo...</span>
-          </a>
-        </article>
-      </div>
-
-      <span class="break"></span>
-
-      <div class="tile is-ancestor">
-        <article class="tile is-child notification is-primary post jarallax-side" id="meow">
-          <p class="title shade">Meow Tab</p>
-          <p class="subtitle shade">Project - The purrfect chrome extension.</p>
-          <a
-            class="button is-white is-outlined postButton"
-            href="https://github.com/aeskandary/meow-tab"
-          >
-            <span class="icon">
-              <i class="fa fa-github"></i>
-            </span>
-            <span>Read more on GitHub...</span>
-          </a>
-        </article>
-      </div>
-
-      <span class="break"></span>
-
-      <div class="tile is-ancestor">
-        <article class="tile is-child notification is-primary post jarallax-side" id="photography">
-          <p class="title shade">Photography</p>
-          <p class="subtitle shade">
-            Art - Miscellanous photos, post-produced in Photoshop.
-          </p>
-          <a class="button is-white is-outlined postButton" href="photos.html">
-            <span class="icon">
-              <i class="fa fa-camera"></i>
-            </span>
-            <span>View gallery...</span>
-          </a>
-        </article>
-      </div>
-
-      <!-- <span class="break"></span> -->
-
-      <!-- coming soon 
-			<div class="tile is-ancestor">
-					<article class="tile is-child notification is-primary post">
-					  <p class="title">Websites</p>
-					  <p class="subtitle">Portfolio - Websites designed using Bootstrap and Bulma.</p>
-					  <a class="button is-white is-outlined postButton" href="">
-						  <span class="icon">
-							  <i class="fa fa-camera"></i>
-						  </span>
-						  <span>View gallery...</span>
-					  </a>
-					</article>
-			 </div>
-			-->
-    </section>
   </body>
 
-  <script src="js/aeScript.js"></script>
+  <script>
+    gsap.from("#name", {duration: 2, opacity: 0, delay: 0.5});
+    gsap.from("#lineBreak", {duration: 2, scaleX: 0, ease: "power2.out", delay: 0});
+    gsap.from(".linkButton:nth-of-type(1)", {
+      duration: 2,
+      x: "-100%",
+      opacity: 0,
+      ease: "power2.out",
+      delay: 1
+    });
+
+    gsap.from(".linkButton:nth-of-type(2)", {
+      duration: 2,
+      y: "100%",
+      opacity: 0,
+      ease: "power2.out",
+      delay: 1
+    });
+
+    gsap.from(".linkButton:nth-of-type(3)", {
+      duration: 2,
+      x: "100%",
+      opacity: 0,
+      ease: "power2.out",
+      delay: 1
+    });
+
+    gsap.from("#downArrow", {
+      duration: 2,
+      opacity: 0,
+      y: "-100%",
+      ease: "power2.out",
+      delay: 1
+    });
+
+    function createStar() {
+      const characters = ['<', '>', '{', '}', '[', ']', '(', ')', '/', '*', '&', '|', '!', '=', '+', '-', '_', ':', ';', '.', ',', '#', '@', '%', '?']; // Add more characters as needed
+
+  const star = document.createElement('div');
+  star.className = 'star';
+  star.textContent = characters[Math.floor(Math.random() * characters.length)]; // Set the text content to a random character
+  star.style.left = `${Math.random() * 100}vw`;
+  star.style.top = '0px';
+  star.style.opacity = Math.random();
+  star.style.transform = `scale(${Math.random()})`;
+
+  document.getElementById('star-container').appendChild(star);
+
+  // Animate the star
+  gsap.to(star, {
+    y: '100vh',
+    duration: Math.random() * 3 + 2,
+    ease: 'none',
+    onComplete: function() {
+      star.remove();
+    }
+  });
+}
+
+// // Create stars every 100ms
+// setInterval(createStar, 100);
+  </script>
 </html>
