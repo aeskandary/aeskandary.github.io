@@ -201,7 +201,7 @@
 
       const star = document.createElement('div');
       star.className = 'star';
-      star.textContent = characters[Math.floor(Math.random() * characters.length)]; // Set the text content to a random character
+      star.textContent = characters[Math.floor(Math.random() * characters.length)]; //randomly selects char from array
       star.style.left = `${Math.random() * 100}vw`;
       star.style.top = '0px';
       star.style.opacity = Math.random();
@@ -220,7 +220,8 @@
       });
 }
 
-//creating stars every 100ms
-setInterval(createStar, 100);
+  //depending on the the available processing cores, adjust frequency of star creation
+  var interval = window.navigator.hardwareConcurrency < 4 ? 400 : 100;
+  setInterval(createStar, interval);
   </script>
 </html>
