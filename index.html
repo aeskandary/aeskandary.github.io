@@ -220,8 +220,15 @@
       });
 }
 
-  //depending on the the available processing cores, adjust frequency of star creation
-  var interval = window.navigator.hardwareConcurrency < 4 ? 400 : 100;
+  //depending on the screen size, adjust frequency of star creation
+  var interval;
+  if (window.innerWidth <= 480) { //small
+    interval = 500;
+  } else if (window.innerWidth <= 768) { //medium
+    interval = 400;
+  } else { //large
+    interval = 100;
+  }
   function loop() {
   createStar();
   setTimeout(() => requestAnimationFrame(loop), interval);
