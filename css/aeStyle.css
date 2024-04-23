@@ -110,38 +110,28 @@ html {
 }
 
 #homePage {
-    background-image: url('../assets/graphics/background/gggrain.svg');
+    background-image: url('../assets/graphics/background/gggradientBlue.svg');
     background-color: black;
-}
-
-.jarallax-test {
-    /* background-image: url('../assets/graphics/background/ggglitch.svg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #photoPage {
-    background-image: url('../assets/graphics/background/gggrain.svg');
+    background-image: url('../assets/graphics/background/gggradientPurple.svg');
     background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-/* @media only screen and (min-width: 768px) {
-    #photoPage {
-        background-image: url('../assets/graphics/background/unsplashDesat/unsplashDesat_lg.webp');
-    }
-} */
+#nameplate {
+    position: sticky !important;
+}
 
 #meow,
 #photography,
 #accel {
-    background-image: url('../assets/graphics/background/ffflurry.svg');
+    background-image: url('../assets/graphics/background/gggyrate.svg');
 }
-
-/* @media only screen and (min-width: 768px) {
-    #meow,
-    #photography,
-    #accel {
-        background-image: url('../assets/graphics/background/unsplashBlade/unsplashBlade_lg.webp');
-    }
-} */
 
 #name {
     font-size: 5.5em;
