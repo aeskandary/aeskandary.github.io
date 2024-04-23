@@ -222,6 +222,10 @@
 
   //depending on the the available processing cores, adjust frequency of star creation
   var interval = window.navigator.hardwareConcurrency < 4 ? 400 : 100;
-  setInterval(createStar, interval);
+  function loop() {
+  createStar();
+  setTimeout(() => requestAnimationFrame(loop), interval);
+  }
+  loop();
   </script>
 </html>
