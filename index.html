@@ -218,21 +218,21 @@
           star.remove();
         }
       });
-}
+    }
 
-  //depending on the screen size, adjust frequency of star creation
-  var interval;
-  if (window.innerWidth <= 480) { //small
-    interval = 500;
-  } else if (window.innerWidth <= 768) { //medium
-    interval = 400;
-  } else { //large
-    interval = 100;
-  }
-  function loop() {
-  createStar();
-  setTimeout(() => requestAnimationFrame(loop), interval);
-  }
-  loop();
+    //depending on the screen size, adjust frequency of star creation
+    var interval;
+    if (window.innerWidth <= 480) { //small
+      interval = 2000;
+    } else if (window.innerWidth <= 768) { //medium
+      interval = 1000;
+    } else { //large
+      interval = 100;
+    }
+    function loop() {
+    createStar();
+    setTimeout(() => requestAnimationFrame(loop), interval);
+    }
+    loop();
   </script>
 </html>
