@@ -39,67 +39,58 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/nk-o/jarallax/dist/jarallax.min.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        jarallax(document.querySelectorAll('.jarallax-main'), {
-            type: 'scroll',
-            speed: 0.01,
-        })
-      });
-    </script>  
+    <script src="https://cdn.jsdelivr.net/gh/nk-o/jarallax/dist/jarallax.min.js"></script> 
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600&family=Source+Code+Pro&display=swap');
     </style>
   </head>
 
-  <body class="grid-mode jarallax-main" id="photoPage">
-    <section class="hero is-info is-small pageBody">
-      <div class="hero-body">
-        <a class="button is-white is-outlined linkButton" href="index.html">
-          <span class="icon">
-            <i class="fa fa-chevron-left"></i>
-          </span>
-          <span>Home</span>
-        </a>
-        <div class="container has-text-centered">
-          <div class="column is-6 is-offset-3" id="infoArea">
-            <h1 class="title" id="name">Photo Gallery</h1>
-            <hr id="lineBreak" />
-			<br class="is-hidden-mobile">
-			<a class="button is-white is-outlined linkButton is-hidden-mobile" id="list-view-button" href="photos.html#photos">
-				<span class="icon">
-				  <i class="fa fa-bars"></i>
-				</span>
-				<span>List View</span>
-			</a>
-			<a class="button is-white is-outlined linkButton is-hidden-mobile" id="grid-view-button" href="photos.html#photos">
-				<span class="icon">
-				  <i class="fa fa-th"></i>
-				</span>
-				<span>Grid View</span>
-			</a>
-          </div>
+  <body class="grid-mode" id="photo-page">
+    <section class="hero is-info is-small page-body">
+        <div class="hero-body">
+            <div class="columns">
+                <div class="column is-4">
+                    <a class="button is-white is-outlined link-button" href="index.html">
+                        <span class="icon">
+                            <i class="fa fa-chevron-left"></i>
+                        </span>
+                        <span>Home</span>
+                    </a>
+                </div>
+                <div class="column is-4 has-text-centered">
+                    <a class="button is-white is-outlined link-button is-hidden-mobile" id="list-view-button">
+                        <span class="icon">
+                            <i class="fa fa-bars"></i>
+                        </span>
+                        <span>List View</span>
+                    </a>
+                    <a class="button is-white is-outlined link-button is-hidden-mobile" id="grid-view-button">
+                        <span class="icon">
+                            <i class="fa fa-th"></i>
+                        </span>
+                        <span>Grid View</span>
+                    </a>
+                </div>
+                <div class="column is-4">
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <section id="photos">
-      <div class="columns is-multiline notification is-primary pageBody">
+      <div class="columns is-multiline notification is-primary page-body">
         <div class="column is-4 gallery-item active">
           <div class="card is-fullheight">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_05.webp" data-zoom-src="assets/graphics/photos/hq/AE_05.webp" alt="Chiesa di San Luigi dei Francesi" />
+                <img class="photo-source zoomable-image" src="assets/graphics/photos/lq/AE_05.webp" data-zoom-src="assets/graphics/photos/hq/AE_05.webp" alt="Chiesa di San Luigi dei Francesi" />
               </figure>
             </div>
             <div class="card-content">
-              <div class="content photosub">
-                Chiesa di San Luigi dei Francesi
-                <br />
-                Roma, Italia
-                <br />
-                <time datetime="2023">2023</time>
+              <div class="content photo-subtitle">
+                <div class="photo-subject">Chiesa di San Luigi dei Francesi</div>
+                <div class="photo-location">Roma, Italia</div>
+                <div class="photo-date"><time datetime="2023">2023</time></div>
               </div>
             </div>
           </div>
@@ -109,16 +100,14 @@
           <div class="card is-fullheight">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_016.webp" data-zoom-src="assets/graphics/photos/hq/AE_016.webp" alt="MAXXI - National Museum Lobby" />
+                <img class="photo-source zoomable-image" src="assets/graphics/photos/lq/AE_016.webp" data-zoom-src="assets/graphics/photos/hq/AE_016.webp" alt="MAXXI - National Museum Lobby" />
               </figure>
             </div>
             <div class="card-content">
-              <div class="content photosub">
-                MAXXI - National Museum Lobby
-                <br />
-                Roma, Italia
-                <br />
-                <time datetime="2023">2023</time>
+              <div class="content photo-subtitle">
+                <div class="photo-subject">MAXXI - National Museum Lobby</div>
+                <div class="photo-location">Roma, Italia</div>
+                <div class="photo-date"><time datetime="2023">2023</time></div>
               </div>
             </div>
           </div>
@@ -129,16 +118,14 @@
           <div class="card is-fullheight">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_01.webp" data-zoom-src="assets/graphics/photos/hq/AE_01.webp" alt="Galleria Umberto I Ceiling" />
+                <img class="photo-source zoomable-image" src="assets/graphics/photos/lq/AE_01.webp" data-zoom-src="assets/graphics/photos/hq/AE_01.webp" alt="Galleria Umberto I Ceiling" />
               </figure>
             </div>
             <div class="card-content">
-              <div class="content photosub">
-                Galleria Umberto I Ceiling
-                <br />
-                Napoli, Italia
-                <br />
-                <time datetime="2023">2023</time>
+              <div class="content photo-subtitle">
+                <div class="photo-subject">Galleria Umberto Ceiling</div>
+                <div class="photo-location">Napoli, Italia</div>
+                <div class="photo-date"><time datetime="2023">2023</time></div>
               </div>
             </div>
           </div>
@@ -149,16 +136,14 @@
           <div class="card is-fullheight">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_011.webp" data-zoom-src="assets/graphics/photos/hq/AE_011.webp" alt="Pantheon Entrance" />
+                <img class="photo-source zoomable-image" src="assets/graphics/photos/lq/AE_011.webp" data-zoom-src="assets/graphics/photos/hq/AE_011.webp" alt="Pantheon Entrance" />
               </figure>
             </div>
             <div class="card-content">
-              <div class="content photosub">
-                Pantheon Entrance
-                <br />
-                Roma, Italia
-                <br />
-                <time datetime="2023">2023</time>
+              <div class="content photo-subtitle">
+                <div class="photo-subject">Pantheon Entrance</div>
+                <div class="photo-location">Roma, Italia</div>
+                <div class="photo-date"><time datetime="2023">2023</time></div>
               </div>
             </div>
           </div>
@@ -169,16 +154,14 @@
           <div class="card is-fullheight">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_08.webp" data-zoom-src="assets/graphics/photos/hq/AE_08.webp" alt="Restaurant at Night" />
+                <img class="photo-source zoomable-image" src="assets/graphics/photos/lq/AE_08.webp" data-zoom-src="assets/graphics/photos/hq/AE_08.webp" alt="Restaurant at Night" />
               </figure>
             </div>
             <div class="card-content">
-              <div class="content photosub">
-                Restaurant at Night
-                <br />
-                Roma, Italia
-                <br />
-                <time datetime="2023">2023</time>
+              <div class="content photo-subtitle">
+                <div class="photo-subject">Restaurant at Night</div>
+                <div class="photo-location">Roma, Italia</div>
+                <div class="photo-date"><time datetime="2023">2023</time></div>
               </div>
             </div>
           </div>
@@ -189,16 +172,14 @@
           <div class="card is-fullheight">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_02.webp" data-zoom-src="assets/graphics/photos/hq/AE_02.webp" alt="Musée d'Orsay Clock" />
+                <img class="photo-source zoomable-image" src="assets/graphics/photos/lq/AE_02.webp" data-zoom-src="assets/graphics/photos/hq/AE_02.webp" alt="Musée d'Orsay Clock" />
               </figure>
             </div>
             <div class="card-content">
-              <div class="content photosub">
-                Musée d'Orsay Clock
-                <br />
-                Paris, France
-                <br />
-                <time datetime="2023">2023</time>
+              <div class="content photo-subtitle">
+                <div class="photo-subject">Musée d'Orsay Clock</div>
+                <div class="photo-location">Paris, France</div>
+                <div class="photo-date"><time datetime="2023">2023</time></div>
               </div>
             </div>
           </div>
@@ -209,16 +190,14 @@
           <div class="card is-fullheight">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_010.webp" data-zoom-src="assets/graphics/photos/hq/AE_010.webp" alt="De Wallen" />
+                <img class="photo-source zoomable-image" src="assets/graphics/photos/lq/AE_010.webp" data-zoom-src="assets/graphics/photos/hq/AE_010.webp" alt="De Wallen" />
               </figure>
             </div>
             <div class="card-content">
-              <div class="content photosub">
-                De Wallen
-                <br />
-                Amsterdam, Nederland
-                <br />
-                <time datetime="2023">2023</time>
+              <div class="content photo-subtitle">
+                <div class="photo-subject">De Wallen</div>
+                <div class="photo-location">Amsterdam, Nederland</div>
+                <div class="photo-date"><time datetime="2023">2023</time></div>
               </div>
             </div>
           </div>
@@ -229,16 +208,14 @@
           <div class="card is-fullheight">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_07.webp" data-zoom-src="assets/graphics/photos/hq/AE_07.webp" alt="Piazza del Popolo" />
+                <img class="photo-source zoomable-image" src="assets/graphics/photos/lq/AE_07.webp" data-zoom-src="assets/graphics/photos/hq/AE_07.webp" alt="Piazza del Popolo" />
               </figure>
             </div>
             <div class="card-content">
-              <div class="content photosub">
-                Piazza del Popolo
-                <br />
-                Roma, Italia
-                <br />
-                <time datetime="2023">2023</time>
+              <div class="content photo-subtitle">
+                <div class="photo-subject">Piazza del Popolo</div>
+                <div class="photo-location">Roma, Italia</div>
+                <div class="photo-date"><time datetime="2023">2023</time></div>
               </div>
             </div>
           </div>
@@ -248,16 +225,14 @@
           <div class="card is-fullheight">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_015.webp" data-zoom-src="assets/graphics/photos/hq/AE_015.webp" alt="Reflective Canal" />
+                <img class="photo-source zoomable-image" src="assets/graphics/photos/lq/AE_015.webp" data-zoom-src="assets/graphics/photos/hq/AE_015.webp" alt="Reflective Canal" />
               </figure>
             </div>
             <div class="card-content">
-              <div class="content photosub">
-                Reflective Canal
-                <br />
-                Venezia, Italia
-                <br />
-                <time datetime="2023">2023</time>
+              <div class="content photo-subtitle">
+                <div class="photo-subject">Reflective Canal</div>
+                <div class="photo-location">Venezia, Italia</div>
+                <div class="photo-date"><time datetime="2023">2023</time></div>
               </div>
             </div>
           </div>
@@ -268,16 +243,14 @@
           <div class="card is-fullheight">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_017.webp" data-zoom-src="assets/graphics/photos/hq/AE_017.webp" alt="Alfa Romeo - Pasolini Exhibit" />
+                <img class="photo-source zoomable-image" src="assets/graphics/photos/lq/AE_017.webp" data-zoom-src="assets/graphics/photos/hq/AE_017.webp" alt="Alfa Romeo - Pasolini Exhibit" />
               </figure>
             </div>
             <div class="card-content">
-              <div class="content photosub">
-                Alfa Romeo - Pasolini Exhibit
-                <br />
-                Roma, Italia
-                <br />
-                <time datetime="2023">2023</time>
+              <div class="content photo-subtitle">
+                <div class="photo-subject">Alfa Romeo - Pasolini Exhibit</div>
+                <div class="photo-location">Roma, Italia</div>
+                <div class="photo-date"><time datetime="2023">2023</time></div>
               </div>
             </div>
           </div>
@@ -288,16 +261,14 @@
           <div class="card">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_06.webp" data-zoom-src="assets/graphics/photos/hq/AE_06.webp" alt="MAXXI - National Museum Stairs" />
+                <img class="photo-source zoomable-image" src="assets/graphics/photos/lq/AE_06.webp" data-zoom-src="assets/graphics/photos/hq/AE_06.webp" alt="MAXXI - National Museum Stairs" />
               </figure>
             </div>
             <div class="card-content">
-              <div class="content photosub">
-                MAXXI - National Museum Stairs
-                <br />
-                Roma, Italia
-                <br />
-                <time datetime="2023">2023</time>
+              <div class="content photo-subtitle">
+                <div class="photo-subject">MAXXI - National Museum Stairs</div>
+                <div class="photo-location">Roma, Italia</div>
+                <div class="photo-date"><time datetime="2023">2023</time></div>
               </div>
             </div>
           </div>
@@ -308,16 +279,14 @@
           <div class="card">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img class="photoSource zoomable-image" src="assets/graphics/photos/lq/AE_014.webp" data-zoom-src="assets/graphics/photos/hq/AE_014.webp" alt="Smoke and Lights"/>
+                <img class="photo-source zoomable-image" src="assets/graphics/photos/lq/AE_014.webp" data-zoom-src="assets/graphics/photos/hq/AE_014.webp" alt="Smoke and Lights"/>
               </figure>
             </div>
             <div class="card-content">
-              <div class="content photosub">
-                Smoke and Lights - Prati Apartment
-                <br />
-                Roma, Italia
-                <br />
-                <time datetime="2023">2023</time>
+              <div class="content photo-subtitle">
+                <div class="photo-subject">Smoke and Lights - Prati Apartment</div>
+                <div class="photo-location">Roma, Italia</div>
+                <div class="photo-date"><time datetime="2023">2023</time></div>
               </div>
             </div>
           </div>
@@ -334,5 +303,5 @@
     </div>
 
   </body>
-  <script src="js/aeScript.js"></script>
+  <script src="js/galleryScript.js"></script>
 </html>
